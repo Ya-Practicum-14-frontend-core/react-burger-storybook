@@ -1,0 +1,18 @@
+<!-- Tabs.stories.mdx -->
+
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import { TabsExample } from "./examples/Tabs.example";
+import TabExampleSource from "!raw-loader!./examples/Tabs.example";
+import { Tab } from "./Tab";
+
+<Meta title="Example/Tabs" component={Tab} />
+
+# Пример использования табов
+
+Tabs
+
+<Canvas mdxSource={TabExampleSource}>
+  <Story name="Tab">{TabsExample.bind({})}</Story>
+</Canvas>
+
+<ArgsTable of={Tab} />
