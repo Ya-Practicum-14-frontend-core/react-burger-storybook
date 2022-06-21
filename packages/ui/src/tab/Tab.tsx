@@ -2,10 +2,22 @@ import React, {Component, PropsWithChildren, FC} from 'react'
 import { Tab as YA_Tab } from "@ya.praktikum/react-developer-burger-ui-components";
 
 export interface ITabProps {
-  active: boolean;
-  value: string;
-  onClick: (value: string) => void;
+    /**
+    Контент таба
+   */
   content: string;
+      /**
+    Определяет активна ли кнопка
+   */
+  active: boolean;
+    /**
+    Value
+   */
+  value: string;
+    /**
+    Действие при клике
+   */
+  onClick: (value: string) => void;
 }
 
 export const Tab: FC<PropsWithChildren<ITabProps>> = ({ content, ...props}): JSX.Element => {
