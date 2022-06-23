@@ -17,16 +17,6 @@ export interface IConstructorElementProps {
  * Primary UI component for user interaction
  */
 export function ConstructorElement(props: IConstructorElementProps): JSX.Element {
-  // const [isLockedCheck, setIsLockedCheck] = React.useState<boolean>(props.isLocked || false);
-
-  // React.useEffect(() => {
-  //   if (props.type === "top" || props.type === "bottom"){
-  //     setIsLockedCheck(true);
-  //   } else {
-  //     setIsLockedCheck( props.isLocked || false);
-  //   }
-  // }, [props.type, props.isLocked]);
-
   return (
     <YA_ConstructorElement {...props} />
   );
