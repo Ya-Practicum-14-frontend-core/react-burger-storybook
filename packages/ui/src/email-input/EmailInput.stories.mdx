@@ -1,0 +1,68 @@
+Расчетный счет 40702810511140002283
+КОР Счет 30101810100000000647 
+
+
+
+<!-- EmailInput.stories.mdx -->
+
+import { Canvas, Meta, Story, Props, ArgsTable } from '@storybook/addon-docs';
+
+import { EmailInput } from './EmailInput';
+
+import EmailInputExample from '!raw-loader!./examples/EmailInput.example.tsx'
+
+
+<Meta 
+  title="EmailInput" 
+  component={EmailInput} 
+  argTypes={{
+    value: {
+      description: 'Адрес почты',
+      control: 'value',
+      defaultValue: ''
+    },
+    name: {
+      description: 'Название элемента',
+      control: 'name',
+      defaultValue: '',
+    },
+    size: {
+      description: 'Размер элемента',
+      control: 'size',
+      defaultValue: '',
+    },
+    onChange: {
+      description: "Обработчик изменения значения элемента",
+      table: {
+        category: 'Events',
+      },
+    }
+  }}
+/>
+
+export const Template = (args) => <EmailInput {...args} />;
+
+# EmailInput
+
+Элемент `EmailInput` используется в построение компонента для внесения значения email адреса интерфейса `Profile`
+
+<Canvas>
+  <Story
+    name="argTypes">
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="argTypes" />
+
+
+# Пример использования
+
+Корректный пример кода для использования ui-элемента
+
+<Canvas mdxSource={ EmailInputExample }>
+  <Story
+    name="useCase">
+    {Template.bind({})}
+  </Story>
+</Canvas>
