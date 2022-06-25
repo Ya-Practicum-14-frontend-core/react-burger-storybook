@@ -1,8 +1,6 @@
 import React, { ChangeEvent } from "react";
 import { PasswordInput as YA_PasswordInput } from "@ya.praktikum/react-developer-burger-ui-components";
 
-import "./PasswordInput.css";
-
 export interface IPasswordInputProps {
   value: string;
   name: string;
