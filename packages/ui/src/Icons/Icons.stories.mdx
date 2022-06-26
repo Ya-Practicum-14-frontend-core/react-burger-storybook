@@ -8,11 +8,21 @@ import { Icons } from "./Icons";
 <Meta
   title="Example/Icons"
   component={Icons}
+  parameters={{
+    backgrounds: {
+      default: "dark",
+      values: [
+        { name: "dark", value: "#1c1c21" },
+        { name: "light", value: "#4c4cff" },
+      ],
+    },
+  }}
   argTypes={{
     type: {
       description: "Определяет цвет иконок",
       options: ["primary", "secondary", "error", "success"],
       control: { type: "radio" },
+      defaultValue: "error",
       table: {
         category: "Внешний вид",
       },
@@ -32,7 +42,7 @@ export const Template = (args) => <Icons {...args} />;
 
 Элемент `Icons`
 
-<Canvas>
+<Canvas isColumn>
   <Story name="argTypes">{Template.bind({})}</Story>
 </Canvas>
 
@@ -43,5 +53,5 @@ export const Template = (args) => <Icons {...args} />;
 Корректный пример кода для использования `Icons`
 
 <Canvas mdxSource={IconsExample}>
-  <Story name="useCase">{Template.bind({})}</Story>
+  <Story name="Example">{Template.bind({})}</Story>
 </Canvas>
