@@ -10,24 +10,38 @@ import { Icons } from "./Icons";
   component={Icons}
   argTypes={{
     type: {
+      description: "Определяет цвет иконок",
       options: ["primary", "secondary", "error", "success"],
       control: { type: "radio" },
+      table: {
+        category: "Внешний вид",
+      },
     },
     onClick: {
       description: "Обработчик нажатия на иконку",
       table: {
-        category: "Events",
+        category: "Событие",
       },
     },
   }}
 />
 
-# Пример использования иконок
+export const Template = (args) => <Icons {...args} />;
 
-Icons
+# Icons
 
-<Canvas mdxSource={IconsExampleSource}>
-  <Story name="Icons">{IconsExample.bind({})}</Story>
+Элемент `Icons`
+
+<Canvas>
+  <Story name="argTypes">{Template.bind({})}</Story>
 </Canvas>
 
-<ArgsTable of={Icons} />
+<ArgsTable story="argTypes" />
+
+# Пример использования
+
+Корректный пример кода для использования `Icons`
+
+<Canvas mdxSource={IconsExample}>
+  <Story name="useCase">{Template.bind({})}</Story>
+</Canvas>
