@@ -1,0 +1,47 @@
+<!-- Counter.stories.mdx -->
+
+import { Canvas, Meta, Story, Props, ArgsTable } from "@storybook/addon-docs";
+
+import { Counter } from "./Counter";
+
+import CounterExample from "!raw-loader!./examples/Counter.example.tsx";
+
+<Meta
+  title="Counter"
+  component={Counter}
+  argTypes={{
+    count: {
+      description: "Счетчик",
+      control: "number",
+      defaultValue: "0",
+    },
+    size: {
+      description: "Размер элемента",
+      options: ["small", "default", "undefined"],
+      control: { type: "radio" },
+      table: {
+        category: "Размер",
+      },
+    },
+  }}
+/>
+
+export const Template = (args) => <Counter {...args} />;
+
+# Counter
+
+Элемент `Counter` используется для установки счетчика выбранных ингредиентов
+
+<Canvas>
+  <Story name="argTypes">{Template.bind({})}</Story>
+</Canvas>
+
+<ArgsTable story="argTypes" />
+
+# Пример использования
+
+Корректный пример кода для использования ui-элемента
+
+<Canvas mdxSource={CounterExample}>
+  <Story name="useCase">{Template.bind({})}</Story>
+</Canvas>
