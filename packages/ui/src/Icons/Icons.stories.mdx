@@ -3,11 +3,30 @@
 import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
 import { IconsExample } from "./examples/Icons.example";
 import IconsExampleSource from "!raw-loader!./examples/Icons.example";
-import { Icons, CurrencyIcon } from "./Icons";
+import {
+  IconsList,
+  CurrencyIcon,
+  BurgerIcon,
+  LockIcon,
+  DragIcon,
+  CloseIcon,
+  CheckMarkIcon,
+  ListIcon,
+  ProfileIcon,
+  EditIcon,
+  InfoIcon,
+  ShowIcon,
+  HideIcon,
+  LogoutIcon,
+  DeleteIcon,
+  ArrowUpIcon,
+  ArrowDownIcon,
+  MenuIcon,
+} from "./Icons";
 
 <Meta
   title="Example/Icons"
-  component={IconsExample}
+  component={CurrencyIcon}
   parameters={{
     backgrounds: {
       default: "dark",
@@ -36,7 +55,80 @@ import { Icons, CurrencyIcon } from "./Icons";
   }}
 />
 
-export const Template = (args) => <IconsExample {...args} />;
+export const Template = (args) => {
+  return (
+    <IconsList>
+      <>
+        CurrencyIcon
+        <CurrencyIcon {...args} />
+      </>
+      <>
+        BurgerIcon
+        <BurgerIcon {...args} />
+      </>
+      <>
+        LockIcon
+        <LockIcon {...args} />
+      </>
+      <>
+        DragIcon
+        <DragIcon {...args} />
+      </>
+      <>
+        CloseIcon
+        <CloseIcon {...args} />
+      </>
+      <>
+        CheckMarkIcon
+        <CheckMarkIcon {...args} />
+      </>
+      <>
+        ListIcon
+        <ListIcon {...args} />
+      </>
+      <>
+        ProfileIcon
+        <ProfileIcon {...args} />
+      </>
+      <>
+        EditIcon
+        <EditIcon {...args} />
+      </>
+      <>
+        InfoIcon
+        <InfoIcon {...args} />
+      </>
+      <>
+        ShowIcon
+        <ShowIcon {...args} />
+      </>
+      <>
+        HideIcon
+        <HideIcon {...args} />
+      </>
+      <>
+        LogoutIcon
+        <LogoutIcon {...args} />
+      </>
+      <>
+        DeleteIcon
+        <DeleteIcon {...args} />
+      </>
+      <>
+        ArrowUpIcon
+        <ArrowUpIcon {...args} />
+      </>
+      <>
+        ArrowDownIcon
+        <ArrowDownIcon {...args} />
+      </>
+      <>
+        MenuIcon
+        <MenuIcon {...args} />
+      </>
+    </IconsList>
+  );
+};
 
 # Icons
 
@@ -52,6 +144,8 @@ export const Template = (args) => <IconsExample {...args} />;
 
 Корректный пример кода для использования `Icons`
 
-<Canvas mdxSource={IconsExample}>
-  <Story name="Example">{Template.bind({})}</Story>
+export const ExampleTemplate = (args) => <IconsExample {...args} />;
+
+<Canvas mdxSource={IconsExampleSource}>
+  <Story name="Example">{ExampleTemplate.bind({})}</Story>
 </Canvas>

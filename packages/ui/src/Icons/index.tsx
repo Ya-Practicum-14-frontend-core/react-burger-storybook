@@ -1,4 +1,4 @@
-export { Icons,
+export { IconsList,
   CurrencyIcon,
   BurgerIcon,
   LockIcon,

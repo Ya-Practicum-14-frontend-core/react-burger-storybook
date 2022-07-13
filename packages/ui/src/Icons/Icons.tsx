@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { CurrencyIcon as YA_CurrencyIcon,
   BurgerIcon as YA_BurgerIcon,
   LockIcon as YA_LockIcon,
@@ -20,7 +20,24 @@ import { CurrencyIcon as YA_CurrencyIcon,
 
 import './Icons.css';
 
-export interface IIconsProps {
+export interface IIconsListProps {
+  /**
+   * Определяет цвет иконки
+   */
+  type: "primary" | "secondary" | "error" | "success";
+
+  /**
+   * Действие на нажатие на иконку
+   */
+  onClick?: () => void;
+
+  /**
+   * Иконки-сабкомпоненты
+   */
+   children?: JSX.Element[];
+}
+
+export interface IIconProps {
   /**
    * Определяет цвет иконки
    */
@@ -35,46 +52,54 @@ export interface IIconsProps {
 /**
  * Primary UI component for user interaction
  */
-export const Icons: FC<IIconsProps> = (props) => {
+export const IconsList: FC<IIconsListProps> = ({type, children}) => {
+  const [copied, setCopied] = useState(false)
+
+  const handleClick = (e:React.MouseEvent<HTMLDivElement>) => {
+    const text = `<${e.currentTarget.innerText} type="${type}"/>`
+    navigator.clipboard.writeText(text).then(function() {
+      console.log('Async: Copying to clipboard was successful!');
+      setCopied(true)
+	    setTimeout(()=>{setCopied(false)}, 1000)
+    }, function(err) {
+      console.error('Async: Could not copy text: ', err);
+    });
+  }
+
   return (
-    <div className='container'>
-      <YA_CurrencyIcon {...props}/>
-      <YA_BurgerIcon {...props}/>
-      <YA_LockIcon {...props} />
-      <YA_DragIcon {...props}/>
-      <YA_CloseIcon {...props} />
-      <YA_CheckMarkIcon {...props} />
-      <YA_ListIcon {...props} />
-      <YA_ProfileIcon {...props} />
-      <YA_EditIcon {...props} />
-      <YA_InfoIcon {...props} />
-      <YA_ShowIcon {...props} />
-      <YA_HideIcon {...props} />
-      <YA_LogoutIcon {...props} />
-      <YA_DeleteIcon {...props} />
-      <YA_ArrowUpIcon  {...props} />
-      <YA_ArrowDownIcon  {...props} />
-      <YA_MenuIcon  {...props} />
+  <div className="container">
+    <div>
+      {children?.map((value, index)=> {
+        return(
+          <div className="icon" onClick={handleClick}>
+            {children[index]}
+          </div>)
+        })
+      }
     </div>
-  );
+    <div className={copied ? 'copied' : 'copied visible'}>Скопировано в буфер обмена</div>
+  </div>
+  )
 };
 
-export const CurrencyIcon: FC<IIconsProps> = (props) => ( <YA_CurrencyIcon {...props}/> );
-export const BurgerIcon: FC<IIconsProps> = (props) => ( <YA_BurgerIcon {...props}/> );
-export const LockIcon: FC<IIconsProps> = (props) => ( <YA_LockIcon {...props}/> );
-export const DragIcon: FC<IIconsProps> = (props) => ( <YA_DragIcon {...props}/> );
-export const CloseIcon: FC<IIconsProps> = (props) => ( <YA_CloseIcon {...props}/> );
-export const CheckMarkIcon: FC<IIconsProps> = (props) => ( <YA_CheckMarkIcon {...props}/> );
-export const ListIcon: FC<IIconsProps> = (props) => ( <YA_ListIcon {...props}/> );
-export const ProfileIcon: FC<IIconsProps> = (props) => ( <YA_ProfileIcon {...props}/> );
-export const EditIcon: FC<IIconsProps> = (props) => ( <YA_EditIcon {...props}/> );
-export const InfoIcon: FC<IIconsProps> = (props) => ( <YA_InfoIcon {...props}/> );
-export const ShowIcon: FC<IIconsProps> = (props) => ( <YA_ShowIcon {...props}/> );
-export const HideIcon: FC<IIconsProps> = (props) => ( <YA_HideIcon {...props}/> );
-export const LogoutIcon: FC<IIconsProps> = (props) => ( <YA_LogoutIcon {...props}/> );
-export const DeleteIcon: FC<IIconsProps> = (props) => ( <YA_DeleteIcon {...props}/> );
-export const ArrowUpIcon: FC<IIconsProps> = (props) => ( <YA_ArrowUpIcon {...props}/> );
-export const ArrowDownIcon: FC<IIconsProps> = (props) => ( <YA_ArrowDownIcon {...props}/> );
-export const MenuIcon: FC<IIconsProps> = (props) => ( <YA_MenuIcon {...props}/> );
+
+
+export const CurrencyIcon: FC<IIconProps> = (props) => ( <YA_CurrencyIcon {...props}/> );
+export const BurgerIcon: FC<IIconProps> = (props) => ( <YA_BurgerIcon {...props}/> );
+export const LockIcon: FC<IIconProps> = (props) => ( <YA_LockIcon {...props}/> );
+export const DragIcon: FC<IIconProps> = (props) => ( <YA_DragIcon {...props}/> );
+export const CloseIcon: FC<IIconProps> = (props) => ( <YA_CloseIcon {...props}/> );
+export const CheckMarkIcon: FC<IIconProps> = (props) => ( <YA_CheckMarkIcon {...props}/> );
+export const ListIcon: FC<IIconProps> = (props) => ( <YA_ListIcon {...props}/> );
+export const ProfileIcon: FC<IIconProps> = (props) => ( <YA_ProfileIcon {...props}/> );
+export const EditIcon: FC<IIconProps> = (props) => ( <YA_EditIcon {...props}/> );
+export const InfoIcon: FC<IIconProps> = (props) => ( <YA_InfoIcon {...props}/> );
+export const ShowIcon: FC<IIconProps> = (props) => ( <YA_ShowIcon {...props}/> );
+export const HideIcon: FC<IIconProps> = (props) => ( <YA_HideIcon {...props}/> );
+export const LogoutIcon: FC<IIconProps> = (props) => ( <YA_LogoutIcon {...props}/> );
+export const DeleteIcon: FC<IIconProps> = (props) => ( <YA_DeleteIcon {...props}/> );
+export const ArrowUpIcon: FC<IIconProps> = (props) => ( <YA_ArrowUpIcon {...props}/> );
+export const ArrowDownIcon: FC<IIconProps> = (props) => ( <YA_ArrowDownIcon {...props}/> );
+export const MenuIcon: FC<IIconProps> = (props) => ( <YA_MenuIcon {...props}/> );
 
 

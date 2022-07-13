@@ -2,3 +2,30 @@
   display: flex;
   gap: 3px;
 }
+
+.icon{
+  display: inline-block;
+  margin: 3px;
+  padding: 10px 12px 10px 11px;
+  border-radius: 5px;
+  border: 1px solid rgba(133, 133, 133, 0.1);
+  transition: opacity 0.3s ease;
+  font-size: 0;
+}
+
+.icon:hover{
+  opacity: 0.7;
+}
+
+.copied {
+  position:absolute;
+  padding: 5px 12px 7px;
+  border-radius: 5px;
+  background-color: rgba(83, 79, 79, 0.8);
+  bottom: 20px;
+  transition: opacity 0.2s ease;
+}
+
+.visible{
+  opacity: 0;
+}
