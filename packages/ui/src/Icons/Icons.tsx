@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { CurrencyIcon as YA_CurrencyIcon,
   BurgerIcon as YA_BurgerIcon,
   LockIcon as YA_LockIcon,
@@ -20,7 +20,7 @@ import { CurrencyIcon as YA_CurrencyIcon,
 
 import './Icons.css';
 
-interface IconsProps {
+export interface IIconsProps {
   /**
    * Определяет цвет иконки
    */
@@ -35,7 +35,7 @@ interface IconsProps {
 /**
  * Primary UI component for user interaction
  */
-export const Icons = (props: IconsProps) => {
+export const Icons: FC<IIconsProps> = (props) => {
   return (
     <div className='container'>
       <YA_CurrencyIcon {...props}/>
@@ -58,3 +58,23 @@ export const Icons = (props: IconsProps) => {
     </div>
   );
 };
+
+export const CurrencyIcon: FC<IIconsProps> = (props) => ( <YA_CurrencyIcon {...props}/> );
+export const BurgerIcon: FC<IIconsProps> = (props) => ( <YA_BurgerIcon {...props}/> );
+export const LockIcon: FC<IIconsProps> = (props) => ( <YA_LockIcon {...props}/> );
+export const DragIcon: FC<IIconsProps> = (props) => ( <YA_DragIcon {...props}/> );
+export const CloseIcon: FC<IIconsProps> = (props) => ( <YA_CloseIcon {...props}/> );
+export const CheckMarkIcon: FC<IIconsProps> = (props) => ( <YA_CheckMarkIcon {...props}/> );
+export const ListIcon: FC<IIconsProps> = (props) => ( <YA_ListIcon {...props}/> );
+export const ProfileIcon: FC<IIconsProps> = (props) => ( <YA_ProfileIcon {...props}/> );
+export const EditIcon: FC<IIconsProps> = (props) => ( <YA_EditIcon {...props}/> );
+export const InfoIcon: FC<IIconsProps> = (props) => ( <YA_InfoIcon {...props}/> );
+export const ShowIcon: FC<IIconsProps> = (props) => ( <YA_ShowIcon {...props}/> );
+export const HideIcon: FC<IIconsProps> = (props) => ( <YA_HideIcon {...props}/> );
+export const LogoutIcon: FC<IIconsProps> = (props) => ( <YA_LogoutIcon {...props}/> );
+export const DeleteIcon: FC<IIconsProps> = (props) => ( <YA_DeleteIcon {...props}/> );
+export const ArrowUpIcon: FC<IIconsProps> = (props) => ( <YA_ArrowUpIcon {...props}/> );
+export const ArrowDownIcon: FC<IIconsProps> = (props) => ( <YA_ArrowDownIcon {...props}/> );
+export const MenuIcon: FC<IIconsProps> = (props) => ( <YA_MenuIcon {...props}/> );
+
+

@@ -3,17 +3,17 @@
 import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
 import { IconsExample } from "./examples/Icons.example";
 import IconsExampleSource from "!raw-loader!./examples/Icons.example";
-import { Icons } from "./Icons";
+import { Icons, CurrencyIcon } from "./Icons";
 
 <Meta
   title="Example/Icons"
-  component={Icons}
+  component={IconsExample}
   parameters={{
     backgrounds: {
       default: "dark",
       values: [
         { name: "dark", value: "#1c1c21" },
-        { name: "light", value: "#4c4cff" },
+        { name: "light", value: "#f5f5f5" },
       ],
     },
   }}
@@ -22,7 +22,7 @@ import { Icons } from "./Icons";
       description: "Определяет цвет иконок",
       options: ["primary", "secondary", "error", "success"],
       control: { type: "radio" },
-      defaultValue: "error",
+      defaultValue: "success",
       table: {
         category: "Внешний вид",
       },
@@ -36,7 +36,7 @@ import { Icons } from "./Icons";
   }}
 />
 
-export const Template = (args) => <Icons {...args} />;
+export const Template = (args) => <IconsExample {...args} />;
 
 # Icons
 
