@@ -1,0 +1,151 @@
+<!-- Icons.stories.mdx -->
+
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import { IconsExample } from "./examples/Icons.example";
+import IconsExampleSource from "!raw-loader!./examples/Icons.example";
+import {
+  IconsList,
+  CurrencyIcon,
+  BurgerIcon,
+  LockIcon,
+  DragIcon,
+  CloseIcon,
+  CheckMarkIcon,
+  ListIcon,
+  ProfileIcon,
+  EditIcon,
+  InfoIcon,
+  ShowIcon,
+  HideIcon,
+  LogoutIcon,
+  DeleteIcon,
+  ArrowUpIcon,
+  ArrowDownIcon,
+  MenuIcon,
+} from "./Icons";
+
+<Meta
+  title="Example/Icons"
+  component={CurrencyIcon}
+  parameters={{
+    backgrounds: {
+      default: "dark",
+      values: [
+        { name: "dark", value: "#1c1c21" },
+        { name: "light", value: "#f5f5f5" },
+      ],
+    },
+  }}
+  argTypes={{
+    type: {
+      description: "Определяет цвет иконок",
+      options: ["primary", "secondary", "error", "success"],
+      control: { type: "radio" },
+      defaultValue: "success",
+      table: {
+        category: "Внешний вид",
+      },
+    },
+    onClick: {
+      description: "Обработчик нажатия на иконку",
+      table: {
+        category: "Событие",
+      },
+    },
+  }}
+/>
+
+export const Template = (args) => {
+  return (
+    <IconsList>
+      <>
+        CurrencyIcon
+        <CurrencyIcon {...args} />
+      </>
+      <>
+        BurgerIcon
+        <BurgerIcon {...args} />
+      </>
+      <>
+        LockIcon
+        <LockIcon {...args} />
+      </>
+      <>
+        DragIcon
+        <DragIcon {...args} />
+      </>
+      <>
+        CloseIcon
+        <CloseIcon {...args} />
+      </>
+      <>
+        CheckMarkIcon
+        <CheckMarkIcon {...args} />
+      </>
+      <>
+        ListIcon
+        <ListIcon {...args} />
+      </>
+      <>
+        ProfileIcon
+        <ProfileIcon {...args} />
+      </>
+      <>
+        EditIcon
+        <EditIcon {...args} />
+      </>
+      <>
+        InfoIcon
+        <InfoIcon {...args} />
+      </>
+      <>
+        ShowIcon
+        <ShowIcon {...args} />
+      </>
+      <>
+        HideIcon
+        <HideIcon {...args} />
+      </>
+      <>
+        LogoutIcon
+        <LogoutIcon {...args} />
+      </>
+      <>
+        DeleteIcon
+        <DeleteIcon {...args} />
+      </>
+      <>
+        ArrowUpIcon
+        <ArrowUpIcon {...args} />
+      </>
+      <>
+        ArrowDownIcon
+        <ArrowDownIcon {...args} />
+      </>
+      <>
+        MenuIcon
+        <MenuIcon {...args} />
+      </>
+    </IconsList>
+  );
+};
+
+# Icons
+
+Элемент `Icons`
+
+<Canvas isColumn>
+  <Story name="argTypes">{Template.bind({})}</Story>
+</Canvas>
+
+<ArgsTable story="argTypes" />
+
+# Пример использования
+
+Корректный пример кода для использования `Icons`
+
+export const ExampleTemplate = (args) => <IconsExample {...args} />;
+
+<Canvas mdxSource={IconsExampleSource}>
+  <Story name="Example">{ExampleTemplate.bind({})}</Story>
+</Canvas>
