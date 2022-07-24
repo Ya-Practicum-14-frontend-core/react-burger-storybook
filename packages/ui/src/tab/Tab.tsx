@@ -1,4 +1,4 @@
-import React, {Component, PropsWithChildren, FC} from 'react'
+import { PropsWithChildren, FC} from 'react'
 import { Tab as YA_Tab } from "@ya.praktikum/react-developer-burger-ui-components";
 
 export interface ITabProps {
