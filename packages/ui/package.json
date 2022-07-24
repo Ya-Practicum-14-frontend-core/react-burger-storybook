@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@storybook/addon-docs": "^6.5.9",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
@@ -61,6 +62,7 @@
     "@storybook/testing-library": "0.0.13",
     "babel-plugin-named-exports-order": "0.0.2",
     "prop-types": "^15.8.1",
+    "storybook-design-token": "^2.4.0",
     "webpack": "^5.73.0"
   }
 }
