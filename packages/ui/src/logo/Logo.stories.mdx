@@ -10,7 +10,6 @@ import { Import } from "../utils/doc";
 <Meta
   title="Logo"
   component={Logo}
-  argTypes={}
 />
 
 <Import
@@ -24,8 +23,8 @@ export const Template = () => <Logo />;
 
 Элемент `Logo` — это логотип Stellar Burgers
 
-<Canvas mdxSource={LogoExampleSource}>
-  <Story name="Logo">{LogoExample.bind({})}</Story>
+<Canvas>
+  <Story name="Logo">{Template.bind({})}</Story>
 </Canvas>
 
 <ArgsTable story="Logo" />
