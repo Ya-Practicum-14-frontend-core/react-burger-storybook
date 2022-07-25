@@ -8,3 +8,9 @@ export const parameters = {
     },
   },
 };
+
+export const decorators = [
+  (Story) => {
+    return React.createElement("div", { children: Story() });
+  },
+];
