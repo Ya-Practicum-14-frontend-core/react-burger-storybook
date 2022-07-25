@@ -1,9 +1,6 @@
 import React from 'react';
 import { ConstructorElement as YA_ConstructorElement } from '@ya.praktikum/react-developer-burger-ui-components';
 
-
-import './ConstructorElement.css';
-
 export interface IConstructorElementProps {
   type?: "top" | "bottom";
   text: string;
