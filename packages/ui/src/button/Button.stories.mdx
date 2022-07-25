@@ -1,0 +1,25 @@
+<!-- Button.stories.mdx -->
+
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+
+import { ButtonExample } from "./examples/Button.example";
+
+import ButtonExampleSource from "!raw-loader!./examples/Button.example";
+
+import { Button } from "./Button";
+import { Import } from "../utils/doc";
+
+<Import
+  module={["Button"]}
+  path={"@ya.praktikum/react-developer-burger-ui-components"}
+/>
+
+<Meta title="Button" component={Button} />
+
+# Пример использования кнопки
+
+<Canvas mdxSource={ButtonExampleSource}>
+  <Story name="Button">{ButtonExample.bind({})}</Story>
+</Canvas>
+
+<ArgsTable of={Button} />

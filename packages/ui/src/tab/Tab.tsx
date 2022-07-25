@@ -17,7 +17,7 @@ export interface ITabProps {
     /**
     Действие при клике
    */
-  onClick: (value: string) => void;
+  onClick: (value: any) => void;
 }
 
 export const Tab: FC<PropsWithChildren<ITabProps>> = ({ content, ...props}): JSX.Element => {
