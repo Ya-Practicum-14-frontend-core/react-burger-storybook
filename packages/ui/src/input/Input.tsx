@@ -1,5 +1,5 @@
 import { Input as YA_Input} from '@ya.praktikum/react-developer-burger-ui-components';
-import { ChangeEvent, MouseEvent, FocusEvent, RefObject } from 'react';
+import React, { ChangeEvent, MouseEvent, FocusEvent, RefObject } from 'react';
 
 export interface IInputProps {
   type: "text" | "email" | "password" | undefined;

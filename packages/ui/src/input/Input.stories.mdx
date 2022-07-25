@@ -2,8 +2,8 @@
 
 import { Canvas, Meta, Story, Props, ArgsTable } from "@storybook/addon-docs";
 import { Input } from "./Input";
-import InputExampleSource from "!raw-loader!./examples/Input.example.tsx";
 import { InputExample } from "./examples/Input.example.tsx";
+import InputExampleSource from "!raw-loader!./examples/Input.example.tsx";
 import { Import } from "../utils/doc";
 
 <Meta
@@ -47,7 +47,7 @@ export const Template = (args) => <Input {...args} />;
 
 # Input
 
-Элемент `Input` используется в построение компонента для внесения значения email адреса интерфейса `Profile`
+Элемент `Input` используется в построении компонента для внесения значения email адреса интерфейса `Profile`
 
 <Canvas>
   <Story name="argTypes">{Template.bind({})}</Story>
