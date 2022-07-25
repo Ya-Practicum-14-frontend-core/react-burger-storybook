@@ -1,13 +1,13 @@
 <!-- Counter.stories.mdx -->
 
 import { Canvas, Meta, Story, Props, ArgsTable } from "@storybook/addon-docs";
-
 import { Counter } from "./Counter";
-
-import CounterExample from "!raw-loader!./examples/Counter.example.tsx";
+import CounterExampleSource from "!raw-loader!./examples/Counter.example.tsx";
+import { CounterExample } from "./examples/Counter.example.tsx";
+import { Import } from "../utils/doc";
 
 <Meta
-  title="example/Counter"
+  title="Counter"
   component={Counter}
   argTypes={{
     count: {
@@ -42,6 +42,6 @@ export const Template = (args) => <Counter {...args} />;
 
 Корректный пример кода для использования ui-элемента
 
-<Canvas mdxSource={CounterExample}>
-  <Story name="useCase">{Template.bind({})}</Story>
+<Canvas mdxSource={CounterExampleSource}>
+  <Story name="Counter">{CounterExample.bind({})}</Story>
 </Canvas>
