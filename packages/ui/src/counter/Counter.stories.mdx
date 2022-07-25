@@ -2,6 +2,7 @@
 
 import { Canvas, Meta, Story, Props, ArgsTable } from "@storybook/addon-docs";
 import { Counter } from "./Counter";
+
 import CounterExampleSource from "!raw-loader!./examples/Counter.example.tsx";
 import { CounterExample } from "./examples/Counter.example.tsx";
 import { Import } from "../utils/doc";
@@ -26,22 +27,19 @@ import { Import } from "../utils/doc";
   }}
 />
 
+<Import
+  module={["Counter"]}
+  path={"@ya.praktikum/react-developer-burger-ui-components"}
+/>
+
 export const Template = (args) => <Counter {...args} />;
 
 # Counter
 
 Элемент `Counter` используется для установки счетчика выбранных ингредиентов
 
-<Canvas>
-  <Story name="argTypes">{Template.bind({})}</Story>
-</Canvas>
-
-<ArgsTable story="argTypes" />
-
-# Пример использования
-
-Корректный пример кода для использования ui-элемента
-
 <Canvas mdxSource={CounterExampleSource}>
   <Story name="Counter">{CounterExample.bind({})}</Story>
 </Canvas>
+
+<ArgsTable story="Counter" />

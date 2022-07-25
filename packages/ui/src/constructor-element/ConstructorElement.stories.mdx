@@ -1,53 +1,54 @@
 <!-- ConstructorElement.stories.mdx -->
 
-import { Canvas, Meta, Story, Props, ArgsTable } from "@storybook/addon-docs";
+import { Canvas, Meta, Story, Props, ArgsTable } from '@storybook/addon-docs';
 
-import { ConstructorElement } from "./ConstructorElement";
+import { ConstructorElement } from './ConstructorElement';
 
-import ConstructorElementExample from "!raw-loader!./examples/ConstructorElement.example.tsx";
+import ConstructorElementExample from '!raw-loader!./examples/ConstructorElement.example.tsx'
 
-<Meta
-  title="ConstructorElement"
-  component={ConstructorElement}
+
+<Meta 
+  title="ConstructorElement" 
+  component={ConstructorElement} 
   argTypes={{
     text: {
-      description: "Название ингредиента",
-      control: "text",
-      defaultValue: "Краторная булка N-200i",
+      description: 'Название ингредиента',
+      control: 'text',
+      defaultValue: "Краторная булка N-200i"
     },
     thumbnail: {
-      description: "Иконка ингредиента",
-      control: "text",
-      defaultValue:
-        "https://yandex-praktikum.github.io/react-developer-burger-ui-components/docs/static/img-5f9ccf21a0eb45d06e57410b025f366c.png",
+      description: 'Иконка ингредиента',
+      control: 'text',
+      defaultValue: "https://yandex-praktikum.github.io/react-developer-burger-ui-components/docs/static/img-5f9ccf21a0eb45d06e57410b025f366c.png",
     },
     price: {
-      description: "Цена ингредиента",
-      control: "number",
+      description: 'Цена ингредиента',
+      control: 'number',
       defaultValue: 1255,
     },
     type: {
       description: "Тип расположения сверху/снизу/середина",
-      options: ["top", "bottom", "undefinded"],
-      control: { type: "radio" },
+      options: ['top', 'bottom', 'undefinded'],
+      control: { type: 'radio' },
       table: {
-        category: "Параметры отображения",
+        category: 'Параметры отображения',
       },
     },
     isLocked: {
       description: "Ее нельзя перетаскивать?",
       table: {
-        category: "Параметры отображения",
+        category: 'Параметры отображения',
       },
     },
     handleClose: {
       description: "Обработчик удаления ингредиента",
       table: {
-        category: "Events",
+        category: 'Events',
       },
-    },
+    }
   }}
 />
+
 
 export const Template = (args) => <ConstructorElement {...args} />;
 
@@ -56,15 +57,23 @@ export const Template = (args) => <ConstructorElement {...args} />;
 Элемент `ConstructorElement` используется в построение компонента интерфейса `BurgerConstructor`
 
 <Canvas>
-  <Story name="argTypes">{Template.bind({})}</Story>
+  <Story
+    name="argTypes">
+    {Template.bind({})}
+  </Story>
 </Canvas>
 
 <ArgsTable story="argTypes" />
+
 
 # Пример использования
 
 Корректный пример кода для использования ui-элемента
 
-<Canvas mdxSource={ConstructorElementExample}>
-  <Story name="useCase">{Template.bind({})}</Story>
+<Canvas mdxSource={ ConstructorElementExample }>
+  <Story
+    name="useCase">
+    {Template.bind({})}
+  </Story>
 </Canvas>
+
