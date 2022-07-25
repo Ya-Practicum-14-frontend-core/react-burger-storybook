@@ -1,0 +1,46 @@
+<!-- Typography.stories.mdx -->
+
+import { Canvas, Meta, Story, ArgsTable } from "@storybook/addon-docs";
+
+import { Typography } from "./Typography";
+
+import { TypographyExample } from "./examples/Typography.example.tsx";
+import TypographyExampleSource from "!raw-loader!./examples/Typography.example.tsx";
+
+<Meta
+  title="Typography"
+  component={Typography}
+  argTypes={{
+    value: {
+      description: "Текст",
+      control: "text",
+      defaultValue: "Пример текста",
+    },
+    color: {
+      description: "Имя элемента",
+      control: { type: "radio" },
+      defaultValue: "text_color_success",
+    },
+    type: {
+      description: "Имя элемента",
+      control: { type: "radio" },
+      defaultValue: "text_type_main-medium",
+    },
+    onChange: {
+      description: "Обработчик изменения значения элемента",
+      table: {
+        category: "Events",
+      },
+    },
+  }}
+/>
+
+export const Template = (args) => <Typography {...args} />;
+
+# Typography
+
+Элемент `Typography`
+
+<Canvas>
+  <Story name="Typography">{Template.bind({})}</Story>
+</Canvas>
