@@ -77,7 +77,7 @@ export const IconsList: FC<IIconsListProps> = ({type, children}) => {
         })
       }
     </div>
-    <div className={copied ? 'copied' : 'copied visible'}>Скопировано в буфер обмена</div>
+    <div className={`${copied ? 'copied' : 'copied visible'} text_color_primary text_type_main-small`}>Скопировано в буфер обмена</div>
   </div>
   )
 };
@@ -101,5 +101,6 @@ export const DeleteIcon: FC<IIconProps> = (props) => ( <YA_DeleteIcon {...props}
 export const ArrowUpIcon: FC<IIconProps> = (props) => ( <YA_ArrowUpIcon {...props}/> );
 export const ArrowDownIcon: FC<IIconProps> = (props) => ( <YA_ArrowDownIcon {...props}/> );
 export const MenuIcon: FC<IIconProps> = (props) => ( <YA_MenuIcon {...props}/> );
+
 
 

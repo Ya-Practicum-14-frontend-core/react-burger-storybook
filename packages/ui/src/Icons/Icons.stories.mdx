@@ -58,102 +58,19 @@ import {
   }}
 />
 
-export const Template = (args) => {
-  return (
-    <IconsList>
-      <>
-        CurrencyIcon
-        <CurrencyIcon {...args} />
-      </>
-      <>
-        BurgerIcon
-        <BurgerIcon {...args} />
-      </>
-      <>
-        LockIcon
-        <LockIcon {...args} />
-      </>
-      <>
-        DragIcon
-        <DragIcon {...args} />
-      </>
-      <>
-        CloseIcon
-        <CloseIcon {...args} />
-      </>
-      <>
-        CheckMarkIcon
-        <CheckMarkIcon {...args} />
-      </>
-      <>
-        ListIcon
-        <ListIcon {...args} />
-      </>
-      <>
-        ProfileIcon
-        <ProfileIcon {...args} />
-      </>
-      <>
-        EditIcon
-        <EditIcon {...args} />
-      </>
-      <>
-        InfoIcon
-        <InfoIcon {...args} />
-      </>
-      <>
-        ShowIcon
-        <ShowIcon {...args} />
-      </>
-      <>
-        HideIcon
-        <HideIcon {...args} />
-      </>
-      <>
-        LogoutIcon
-        <LogoutIcon {...args} />
-      </>
-      <>
-        DeleteIcon
-        <DeleteIcon {...args} />
-      </>
-      <>
-        ArrowUpIcon
-        <ArrowUpIcon {...args} />
-      </>
-      <>
-        ArrowDownIcon
-        <ArrowDownIcon {...args} />
-      </>
-      <>
-        MenuIcon
-        <MenuIcon {...args} />
-      </>
-    </IconsList>
-  );
-};
-
 <Import
   module={["CurrencyIcon"]}
   path={"@ya.praktikum/react-developer-burger-ui-components"}
 />
 
+export const Template = (args) => <IconsExample {...args} />;
+
 # Icons
 
-Элемент `Icons`
-
-<Canvas isColumn>
-  <Story name="argTypes">{Template.bind({})}</Story>
-</Canvas>
-
-<ArgsTable story="argTypes" />
-
-# Пример использования
-
-Корректный пример кода для использования `Icons`
-
-export const ExampleTemplate = (args) => <IconsExample {...args} />;
+Элементы `Icons` используются в построении интерфейса
 
 <Canvas mdxSource={IconsExampleSource}>
-  <Story name="Example">{ExampleTemplate.bind({})}</Story>
+  <Story name="Icons">{Template.bind({})}</Story>
 </Canvas>
+
+<ArgsTable story="Icons" />
