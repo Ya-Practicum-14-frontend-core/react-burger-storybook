@@ -33,10 +33,20 @@ export const Template = (args) => <Typography {...args} />;
 
 # Typography
 
-Элемент `Typography`
+Элемент `Typography` задает стили текста
 
 <Canvas mdxSource={TypographyExampleSource}>
-  <Story name="Typography">{Template.bind({})}</Story>
+  <Story name="argTypes">{Template.bind({})}</Story>
 </Canvas>
 
 <ArgsTable of={Typography} />
+
+# Пример использования
+
+Корректный пример кода для использования ui-элемента
+
+export const TemplateExample = (args) => <TypographyExample {...args} />;
+
+<Canvas mdxSource={TypographyExampleSource}>
+  <Story name="useCases">{TemplateExample.bind({})}</Story>
+</Canvas>

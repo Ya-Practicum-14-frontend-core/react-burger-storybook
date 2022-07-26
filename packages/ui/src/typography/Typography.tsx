@@ -4,16 +4,16 @@ export interface ITypographyProps {
   /**
   Цвет текста
   */
-  color: 'text_color_inactive' | 'text_color_primary' | 'text_color_accent' |  'text_color_error' |  'text_color_success';
+  color: 'text_color_inactive' | 'text_color_primary' | 'text_color_accent' |  'text_color_error' |  'text_color_success',
   /**
   Тип текста
   */
   type: 'text_type_main-default' | 'text_type_main-large' | 'text_type_main-medium' |
-    'text_type_main-small' |  'text_type_digits-default' | 'text_type_digits-medium' |  'text_type_digits-large';
+    'text_type_main-small' |  'text_type_digits-default' | 'text_type_digits-medium' |  'text_type_digits-large',
   /**
   Текст
   */
-  value: string;
+  value: string,
 }
 
 export const Typography: FC<ITypographyProps> = ({type, color, value}) => {
