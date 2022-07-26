@@ -14,23 +14,17 @@ import TypographyExampleSource from "!raw-loader!./examples/Typography.example.t
     value: {
       description: "Текст",
       control: "text",
-      defaultValue: "Пример текста",
+      defaultValue: "Пример",
     },
     color: {
-      description: "Имя элемента",
+      description: "Цвет текста",
       control: { type: "radio" },
       defaultValue: "text_color_success",
     },
     type: {
-      description: "Имя элемента",
+      description: "Цвет текста",
       control: { type: "radio" },
-      defaultValue: "text_type_main-medium",
-    },
-    onChange: {
-      description: "Обработчик изменения значения элемента",
-      table: {
-        category: "Events",
-      },
+      defaultValue: "text_type_main-default",
     },
   }}
 />
@@ -41,6 +35,8 @@ export const Template = (args) => <Typography {...args} />;
 
 Элемент `Typography`
 
-<Canvas>
+<Canvas mdxSource={TypographyExampleSource}>
   <Story name="Typography">{Template.bind({})}</Story>
 </Canvas>
+
+<ArgsTable of={Typography} />

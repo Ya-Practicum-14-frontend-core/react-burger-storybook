@@ -17,5 +17,8 @@ export interface ITypographyProps {
 }
 
 export const Typography: FC<ITypographyProps> = ({type, color, value}) => {
-  return <p className={`${type ? type : 'text_type_main-default'} ${color ? color : 'text_color_primary'}`}> {value ? value : "Пример текста"} </p>
+  return (
+    <p className={`${type ? type : 'text_type_main-default'} ${color ? color : 'text_color_primary'}`}>
+      {`<p className='${type ? type : 'text_type_main-default'} ${color ? color : 'text_color_primary'}'> ${value ? value : "Пример текста"} </p>`}
+    </p>)
 }
