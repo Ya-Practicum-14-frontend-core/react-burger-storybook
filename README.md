@@ -1,7 +1,7 @@
 # react-burger-storybook
 ### Групповой проект 14 потока курса React-разработчик
 
-Проект можно посмотреть по [ссылке]()
+Проект можно посмотреть по [ссылке](https://ya-practicum-14-frontend-core.github.io/react-burger-storybook/)
 
 ### В ходе проекта было реализовано:
 
