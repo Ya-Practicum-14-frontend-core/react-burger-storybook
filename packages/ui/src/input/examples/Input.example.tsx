@@ -1,27 +1,60 @@
 import React from 'react';
 import { Input } from '@ya.praktikum/react-developer-burger-ui-components';
+import "./input.css"
 
-export const EmailInputExample = () => {
+export const InputExample = () => {
   
-  const [value, setValue] = React.useState('value')
-  const inputRef = React.useRef<HTMLInputElement | null>(null)
+  const [pass, setPass] = React.useState('Bob')
+  const [email, setEmail] = React.useState("bob@example.com")
+  const [name, setName] = React.useState('bobPass')
+
+  const [error, setError] = React.useState(false)
+
   const onIconClick = () => {
-    setTimeout(() => inputRef.current?.focus(), 0)
-    alert('Icon Click Callback')
+    setTimeout(() => {
+      alert('Вы ввели некорректные данные')
+      setError(true)
+    }, 2000)
   }
   return (
-    <Input
-      type={'text'}
-      placeholder={'placeholder'}
-      onChange={e => setValue(e.target.value)}
-      icon={'CurrencyIcon'}
-      value={value}
-      name={'name'}
-      error={false}
-      ref={inputRef}
-      onIconClick={onIconClick}
-      errorText={'Ошибка'}
-      size={'default'}
-    />
+    <div className='container'>
+      <Input
+        type={'text'}
+        disabled
+        placeholder={'Введите имя'}
+        onChange={e => setName(e.target.value)}
+        icon={"CheckMarkIcon"}
+        value={name}
+        name={'name'}
+        error={error}
+        onIconClick={onIconClick}
+        errorText={'Ошибка, попробуйте позднее'}
+        size={'default'}
+      />
+      <Input
+        type={'email'}
+        placeholder={'Введите email'}
+        onChange={e => setEmail(e.target.value)}
+        icon={"CheckMarkIcon"}
+        value={email}
+        name={'email'}
+        error={error}
+        onIconClick={onIconClick}
+        errorText={'Ошибка, попробуйте позднее'}
+        size={'default'}
+      />
+      <Input
+        type={'password'}
+        placeholder={'Введите пароль'}
+        onChange={e => setPass(e.target.value)}
+        icon={"CheckMarkIcon"}
+        value={pass}
+        name={'password'}
+        error={error}
+        onIconClick={onIconClick}
+        errorText={'Ошибка, попробуйте позднее'}
+        size={'default'}
+      />
+    </div>
   )
 }

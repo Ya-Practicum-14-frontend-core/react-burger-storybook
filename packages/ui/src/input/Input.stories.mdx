@@ -1,15 +1,26 @@
 <!-- Input.stories.mdx -->
 
 import { Canvas, Meta, Story, Props, ArgsTable } from "@storybook/addon-docs";
+
 import { Input } from "./Input";
-import { InputExample } from "./examples/Input.example.tsx";
+
 import InputExampleSource from "!raw-loader!./examples/Input.example.tsx";
+import { InputExample } from "./examples/Input.example.tsx";
 import { Import } from "../utils/doc";
 
 <Meta
   title="Input"
   component={Input}
   argTypes={{
+    type: {
+      description: "Тип инпута",
+      options: ["text", "email", "password"],
+      control: { type: "radio" },
+      table: {
+        category: "Тип",
+      },
+      defaultValue: "text"
+    },
     value: {
       description: "Значения email адреса",
       control: "text",
@@ -18,7 +29,29 @@ import { Import } from "../utils/doc";
     name: {
       description: "Название элемента",
       control: "text",
-      defaultValue: "",
+      defaultValue: "Название элемента",
+    },
+    placeholder: {
+      description: "Название поля",
+      control: "text",
+      defaultValue: "Название поля",
+    },
+    success: {
+      description: "Корректное заполнение поля",
+      control: "boolean",
+    },
+    error: {
+      description: "Некорректное заполнение поля",
+      control: "boolean",
+    },
+    disabled: {
+      description: "Отключение поля",
+      control: "boolean",
+    },
+    errorText: {
+      description: "Текст, который выводится при ошибке",
+      control: "text",
+      defaultValue: "Произошла ошибка",
     },
     size: {
       description: "Размер элемента",
@@ -34,6 +67,34 @@ import { Import } from "../utils/doc";
       table: {
         category: "Events",
       },
+      defaultValue: "(() => void)",
+    },
+    onIconClick: {
+      description: "Обработчик клика на элемент",
+      table: {
+        category: "Events",
+      },
+      defaultValue: "(() => void)",
+    },
+    onBlur: {
+      description: "Обработчик потери элементом фокуса",
+      table: {
+        category: "Events",
+      },      
+      defaultValue: "(() => void)",
+    },
+    onFocus: {
+      description: "Обработчик события при получении элементом фокуса",
+      table: {
+        category: "Events",
+      },
+      defaultValue: "(() => void)",
+    },
+    ref: {
+      table: { disable: true },
+    },
+    key: {
+      table: { disable: true },
     },
   }}
 />
@@ -47,7 +108,7 @@ export const Template = (args) => <Input {...args} />;
 
 # Input
 
-Элемент `Input` используется в построении компонента для внесения значения email адреса интерфейса `Profile`
+Элемент `Input` используется в качестве полей ввода емейла, 
 
 <Canvas>
   <Story name="argTypes">{Template.bind({})}</Story>
@@ -60,5 +121,8 @@ export const Template = (args) => <Input {...args} />;
 Корректный пример кода для использования ui-элемента
 
 <Canvas mdxSource={InputExampleSource}>
-  <Story name="useCase">{InputExample.bind({})}</Story>
+  <Story name="useCase">
+    {InputExample.bind({})}
+  </Story>
 </Canvas>
+
