@@ -14,7 +14,7 @@
 ![TypeScript](https://img.shields.io/badge/-TypeScript-000?&logo=TypeScript)
 ![React](https://img.shields.io/badge/-React-000?&logo=React)
 ![Storybook](https://img.shields.io/badge/-Storybook-000?&logo=Storybook)
-![Lerna](https://img.shields.io/badge/-Lerna-000?&logo=Lerna
+![Lerna](https://img.shields.io/badge/-Lerna-000?&logo=Lerna)
 
 ### Как запустить проект:
 
