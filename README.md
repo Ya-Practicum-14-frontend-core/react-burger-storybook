@@ -19,4 +19,5 @@
 ### Как запустить проект:
 
 `$> cd packages/ui && npm i && npm run storybook`
+
 `$> cd packages/ui && yarn install && yarn storybook`
