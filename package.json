@@ -1,7 +1,0 @@
-{
-  "name": "react-burger-storybook",
-  "private": true,
-  "devDependencies": {
-    "lerna": "^5.1.2"
-  }
-}
